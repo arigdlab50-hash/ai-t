@@ -1,0 +1,6 @@
+{
+  "name": "TravelMate AI",
+  "description": "Intelligent AI-powered travel assistant for trip planning, city exploration, flight, bus, train, and hotel bookings.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
