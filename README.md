@@ -6,7 +6,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v3.4-06B6D4?style=for-the-badge&logo=tailwindcss)](https://tailwindcss.com/)
 [![Google Gemini API](https://img.shields.io/badge/Google_Gemini-API-8E44AD?style=for-the-badge&logo=google)](https://ai.google.dev/)
 
-**TravelMate AI** is an all-in-one, AI-powered travel planning, booking, and navigation platform. Designed for modern global travelers, TravelMate AI combines intelligent day-by-day itinerary generation using the **Google Gemini API**, instant multi-currency price conversion, seamless booking flows for flights, buses, trains, and hotels, and instant payment integration for global and local payment gateways.
+**TravelMate AI** is an all-in-one, AI-powered travel planning, booking, and navigation platform. Designed for modern global travelers, TravelMate AI combines intelligent day-by-day itinerary generation, multi-currency pricing, and prototype booking flows to showcase an end-to-end UX.
 
 🌐 **Live Application:** [https://ai-t-seven.vercel.app/](https://ai-t-seven.vercel.app/)
 
@@ -20,43 +20,28 @@
 - Includes estimated budgets, packing lists, weather recommendations, and essential local safety tips.
 
 ### 2. 💱 Multi-Currency Pricing Engine
-- Supports live currency conversion across major global and regional currencies:
-  - **PKR (Pakistani Rupee - Rs)**
-  - **USD (US Dollar - $)**
-  - **EUR (Euro - €)**
-  - **GBP (British Pound - £)**
-  - **AED (UAE Dirham)**
-  - **SAR (Saudi Riyal)**
-  - **CAD, AUD, JPY, INR, CNY, TRY**
+- Supports live currency conversion across major global and regional currencies.
 - Instant currency toggle accessible from the top header bar and booking checkouts.
 
-### 3. 💳 Multi-Currency & Localized Payment Gateways
-- Integrated checkout flows supporting both international and popular South Asian / GCC payment options:
-  - **Credit / Debit Cards** (Visa, MasterCard, Amex, UnionPay)
-  - **JazzCash Mobile Wallet** (Pakistan)
-  - **EasyPaisa Wallet** (Pakistan)
-  - **Raast Instant Bank Transfer** (0% fee IBAN/Raast ID transfer)
-  - **PayPal**
-  - **Apple Pay / Google Pay**
-  - **Mada / STC Pay** (Saudi Arabia & GCC region)
+### 3. 💳 Multi-Currency & Localized Payment Gateways (Prototype)
+- The repository includes UI flows for multiple payment methods, but these are prototyped/simulated by default. See the "Booking & Payment flows" note below before relying on them for real transactions.
 
-### 4. 🎟️ Flight, Bus & Train Booking
-- Search, filter, and compare routes across domestic and international transit options.
-- Filter by route, price, and operator.
-- Instant seat selection (Window, Aisle, Front Row) and instant digital boarding pass generation with active QR codes.
+### 4. 🎟️ Flight, Bus & Train Booking (Prototype)
+- Search, filter, and compare routes across domestic and international transit options. Booking flows are implemented as UX prototypes and must be backed by real provider APIs to become production-ready.
 
-### 5. 🏨 Luxury & Budget Hotel Reservations
-- Browse handpicked hotels in popular cities including **Quetta, Lahore, Islamabad, Hunza, Skardu, Paris, Dubai, and Istanbul**.
-- Real-time amenity previews (Wi-Fi, Free Breakfast, Swimming Pool, Spa, Airport Shuttle).
-- Quick check-in/check-out reservation system with instant confirmation passes.
+### 5. 🏨 Hotel Reservations (Prototype)
+- Browse hotels and view reservation flows. Confirmations and digital passes are simulated unless connected to live provider APIs.
 
-### 6. 🗺️ City Guides & Nearby Explorer
-- Detailed destination breakdown with top attractions, local food recommendations, best visiting months, and safety tips.
-- Nearby Explorer to locate top restaurants, historical landmarks, transit hubs, and emergency medical services relative to your location.
+---
 
-### 7. 🎒 Unified Trip Management ("My Trips")
-- Access all confirmed flight passes, train tickets, and hotel vouchers in one organized dashboard.
-- Digital QR code boarding passes ready for offline viewing and travel verification.
+## Note about Booking & Payment flows
+
+Important: The current repository includes UI flows for booking and payment checkouts intended as a prototype/demo. These flows are simulated and do not process real payments unless you integrate a payment gateway (Stripe, PayPal, etc.) and supply live credentials.
+
+If you plan to accept real payments:
+- Never commit API keys or secret credentials to source control.
+- Use server-side payment integrations and provider SDKs; keep secrets in environment variables.
+- Update the documentation to clearly state which payment providers are configured and how to obtain test keys.
 
 ---
 
@@ -81,8 +66,8 @@
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/travelmate-ai.git
-   cd travelmate-ai
+   git clone https://github.com/arigdlab50-hash/ai-t.git
+   cd ai-t
    ```
 
 2. **Install dependencies:**
@@ -91,7 +76,7 @@
    ```
 
 3. **Configure Environment Variables:**
-   Create a `.env` file in the root directory (refer to `.env.example`):
+   Copy `.env.example` to `.env` and set the GEMINI_API_KEY value:
    ```env
    GEMINI_API_KEY=your_google_gemini_api_key_here
    ```
@@ -119,4 +104,3 @@
 ## 📄 License
 
 This project is licensed under the MIT License.
-
